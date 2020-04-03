@@ -66,7 +66,7 @@ Para ser utilizado em objetos complexos , ou seja objetos que adentro dele temos
 	
   - Utilizando o getInstance()
   
-    	private float aliquota;
+  	private float aliquota;
 	private float valorPis;
 	
 	// Singleton 
@@ -84,6 +84,21 @@ Para ser utilizado em objetos complexos , ou seja objetos que adentro dele temos
 
 # Observer : 
   Ação notificatoria que nos permite observar comportamentos que acontecem no sistema e repassar para todas as ações que estao esperando  a resposta de algo.
+  	
+	public class Pis extends Observable  implements Imposto {
+	
+  	/**
+	 * Utilizando setChanged() para por este metodo em modo de observação e utilizando
+	 * o recurso notify para exibir o valor alterado
+	 */
+	 
+	@Override
+	public void calcularImposto(float valor) {
+		setChanged();
+		valorPis = valor * aliquota;
+		notifyObservers(valorPis);
+	}
+     }
 	
 
 	
