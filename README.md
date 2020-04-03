@@ -62,9 +62,8 @@ Para ser utilizado em objetos complexos , ou seja objetos que adentro dele temos
 		}
 		return prop;
 	     }
-	
-	
-  - Utilizando o getInstance()
+	     
+  - Consumindo o Singleton
   
   	private float aliquota;
 	private float valorPis;
