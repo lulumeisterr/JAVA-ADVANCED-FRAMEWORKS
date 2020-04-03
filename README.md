@@ -64,14 +64,12 @@ Para ser utilizado em objetos complexos , ou seja objetos que adentro dele temos
 	     }
 	     
   - Consumindo o Singleton
-  
   	private float aliquota;
 	private float valorPis;
 	
-	// Singleton 
 	public Pis() {
-		aliquota = Float.parseFloat(ConfigSingleton.getInstance().getProperty("aliquota"));
-	}
+	   aliquota = Float.parseFloat(ConfigSingleton.getInstance()
+	   		.getProperty("aliquota"));}
 	
 # Adapter : 
   Permite o Cliente utilizar, além de outros objetos ou metodos ja existentes, os objetos do tipo Adaptado. 
