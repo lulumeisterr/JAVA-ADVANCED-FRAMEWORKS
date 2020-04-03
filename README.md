@@ -42,8 +42,37 @@
 
 Para ser utilizado em objetos complexos , ou seja objetos que adentro dele temos outros objetos e necessitamos realizar mudanças sendo assim podemos facilitar o processo de criação de objetos.
 
-# Single : 
+# Singleton : 
   Define-se em criar uma unica instancia para que seja disponibilizada em todo o projeto.
+  
+  - Consumindo um arquivo .properties anexado no projeto acionando uma unica instancia.
+  
+        private static Properties prop;
+	      private ConfigSingleton () {}
+	
+		public static Properties getInstance() {
+				
+		if(prop == null) {
+			prop = new Properties();
+			try {
+				prop.load(ConfigSingleton.class.getResourceAsStream("/config.properties"));
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		return prop;
+	     }
+	
+	
+  - Utilizando o getInstance()
+  
+    	private float aliquota;
+	private float valorPis;
+	
+	// Singleton 
+	public Pis() {
+		aliquota = Float.parseFloat(ConfigSingleton.getInstance().getProperty("aliquota"));
+	}
 	
 # Adapter : 
   Permite o Cliente utilizar, além de outros objetos ou metodos ja existentes, os objetos do tipo Adaptado. 
