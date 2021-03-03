@@ -29,9 +29,7 @@
 
 # Strategy
    
-   Sempre que precisarmos realizar uma validacao e essa validacao varia com determinados parametros
-	 nos usamos o strategy para remover a redundancia de codigo(ifs e elses) e separar cada estrategia
-	 da funcionalidade em classes especificas podendo utilizar nas classes separadas contratos ou classes abstratas.
+   Sempre que precisarmos realizar uma validação e essa validação varia com determinados parâmetros nos usamos o strategy para remover a redundância de código(ifs e elses) e separar cada estrategia da funcionalidade em classes específicas podendo utilizar nas classes separadas contratos ou classes abstratas.
 
 # Factory : 
 
