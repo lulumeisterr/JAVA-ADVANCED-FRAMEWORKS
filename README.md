@@ -35,7 +35,7 @@
 
 # Chain of Reponsabillity
     
-   Utilizamos a cadeia de responsabilidade para quando temos varias regras para uma funcionalidade e não sabemos como aplica-la afim evitar redundancias de condicoes no codigo , com a finalidade de ir verificando as condicoes e ir passando para as proximas ate chegar no fim.
+   Utilizamos a cadeia de responsabilidade para quando temos varias regras para uma funcionalidade e não sabemos como aplica-la afim de evitar redundancias de condicoes no codigo , com a finalidade de ir verificando as condicoes e ir passando para as proximas ate chegar no fim.
 
 # Factory : 
 
