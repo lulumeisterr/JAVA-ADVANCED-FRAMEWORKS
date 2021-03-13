@@ -2,20 +2,30 @@ package br.com.gof.teste;
 
 import java.math.BigDecimal;
 
+import org.junit.Assert;
+import org.junit.Test;
+
 import br.com.gof.descontos.CalcularDesconto;
-import br.com.gof.orcamento.Desconto;
 import br.com.gof.orcamento.Orcamento;
 
-public class CalcularUsandoDesconto {
-
-	public static void main(String[] args) {
+public class CalcularDescontoTest {
+	
+	
+	@Test
+	public void teste() {
 		
-		Orcamento primeiroProduto = new Orcamento(new BigDecimal("1999"),10);
-		Orcamento segundoProduto = new Orcamento(new BigDecimal("1.90"),3);
-		
+		//Cenario
 		CalcularDesconto calcular = new CalcularDesconto();
-		System.out.println(calcular.calcularDesconto(segundoProduto));
+		Orcamento primeiroProduto = new Orcamento(new BigDecimal("1999"),10);
+		Orcamento segundoProduto = new Orcamento(new BigDecimal("300"),3);
 		
+		//Acao
+		
+		BigDecimal resultado = calcular.calcularDesconto(segundoProduto);
+		
+		//Verificacao
+		
+		Assert.assertTrue("resultado " + resultado, resultado.equals(new BigDecimal("61.50")));
 		
 		
 	}
