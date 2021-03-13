@@ -1,4 +1,4 @@
-package br.com.gof.teste;
+package br.com.gof.descontos;
 
 import java.math.BigDecimal;
 

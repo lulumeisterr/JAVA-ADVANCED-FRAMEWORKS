@@ -1,20 +1,21 @@
-package br.com.gof.teste;
+package br.com.gof.impostos;
+
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.is;
 
 import java.math.BigDecimal;
 
+import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
 import org.junit.Test;
 
-import br.com.gof.impostos.CalcularImpostos;
-import br.com.gof.impostos.ICMS;
-import br.com.gof.impostos.Imposto;
 import br.com.gof.orcamento.Orcamento;
 
 public class CalcularImpostoTest {
 
 	@Test
 	public void teste() {
-		
+
 		/**
 		 * FIRST
 		 * F = Fast
@@ -28,22 +29,27 @@ public class CalcularImpostoTest {
 		 * 
 		 * 
 		 */
-		
+
 		// Cenario
-		
+
 		CalcularImpostos calculo = new CalcularImpostos();
 		Orcamento orcamento = new Orcamento(new BigDecimal("100"));
-		
+
 		// Acao
-		
+
 		BigDecimal resultado = calculo.calcular(orcamento, new ICMS());
+
+		// Verificacao usando lib Hamcrest
+
+		// Usando metodo (is) static
+		Assert.assertThat(new BigDecimal("10.0"),is(equalTo(resultado)));
 		
-		// Verificacao
+		//Negacao
+		Assert.assertThat(resultado,CoreMatchers.is(CoreMatchers.not(new BigDecimal("10.1"))));
 		
-		Assert.assertTrue(resultado.equals(new BigDecimal("10.0")));
-		Assert.assertTrue(!orcamento.getValor().equals(new BigDecimal("0")));
-		Assert.assertTrue(new ICMS() instanceof Imposto);
+		Assert.assertThat(orcamento.getValor(),CoreMatchers.is(CoreMatchers.not("0")));
+		//Assert.assertTrue(!orcamento.getValor().equals(new BigDecimal("0")));
 
 	}
-	
+
 }
