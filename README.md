@@ -30,7 +30,12 @@
 # Strategy
    
    Sempre que precisarmos realizar uma validação e essa validação varia com determinados parâmetros nos usamos o strategy para remover a redundância de código(ifs e elses) e separar cada estrategia da funcionalidade em classes específicas podendo utilizar interfaces ou classes abstratas, usamos o strategy apenas quando ja
-   sabemos qual parametro determina a estrategia.
+   sabemos(da estrategia) qual parametro determina a estrategia.
+
+
+# Chain of Reponsabillity
+    
+   Utilizamos a cadeia de responsabilidade para quando temos varias regras para uma funcionalidade e não sabemos como aplica-la afim de evitar redundancias de condicoes no codigo , com a finalidade de ir verificando as condicoes e ir passando para as proximas ate chegar no fim.
 
 # Factory : 
 
