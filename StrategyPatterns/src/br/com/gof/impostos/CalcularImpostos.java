@@ -43,8 +43,12 @@ public class CalcularImpostos {
 	 * @param orcamento
 	 * @param imposto
 	 * @return
+	 * @throws Exception 
 	 */
-	public BigDecimal calcular(Orcamento orcamento , Imposto imposto) {
+	public BigDecimal calcular(Orcamento orcamento , Imposto imposto) throws Exception {
+		if(orcamento.getValor().compareTo(new BigDecimal("0")) == 0) {
+			throw new Exception("Valor nao pode ser 0");
+		}
 		return imposto.calcularImposto(orcamento);
 	}
 

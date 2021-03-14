@@ -17,9 +17,9 @@ public class CalcularImpostoTest {
 
 	@Rule
 	public ErrorCollector error = new ErrorCollector();
-	
+
 	@Test
-	public void teste() {
+	public void teste() throws Exception {
 
 		/**
 		 * FIRST
@@ -38,29 +38,33 @@ public class CalcularImpostoTest {
 		// Cenario
 
 		CalcularImpostos calculo = new CalcularImpostos();
-		Orcamento orcamento = new Orcamento(new BigDecimal("100"));
+		Orcamento orcamento = new Orcamento(new BigDecimal("0"));
 
 		// Acao
 
-		BigDecimal resultado = calculo.calcular(orcamento, new ICMS());
+		BigDecimal resultado;
+
+
+		resultado = calculo.calcular(orcamento, new ICMS());
 
 		// Verificacao usando lib Hamcrest
 
 		// Usando metodo (is) static
 		//Assert.assertThat(new BigDecimal("10.0"),is(equalTo(resultado)));
-		
+
 		error.checkThat(new BigDecimal("10.0"),is(equalTo(resultado)));
-		
+
 		//Negacao
 		//Assert.assertThat(resultado,CoreMatchers.is(CoreMatchers.not(new BigDecimal("10.1"))));
-		
+
 		error.checkThat(resultado,CoreMatchers.is(CoreMatchers.not(new BigDecimal("10.5"))));
-		
-		
+
+
 		//Assert.assertThat(orcamento.getValor(),CoreMatchers.is(CoreMatchers.not("0")));
 		//Assert.assertTrue(!orcamento.getValor().equals(new BigDecimal("0")));
-		
+
 		error.checkThat(orcamento.getValor(),CoreMatchers.is(CoreMatchers.not("0")));
+
 
 	}
 
