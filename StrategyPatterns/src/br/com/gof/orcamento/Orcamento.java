@@ -3,17 +3,19 @@
 package br.com.gof.orcamento;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Orcamento {
 
+	private List<BigDecimal> orcamentosValor;
 	private BigDecimal valor;
 	private Integer quantidade;
-
+	
 	public Orcamento() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	
+
 	public Orcamento(Integer quantidade) {
 		this.quantidade = quantidade;
 	}
@@ -21,7 +23,12 @@ public class Orcamento {
 	public Orcamento(BigDecimal valor) {
 		this.valor = valor;
 	}
-	
+
+	public Orcamento(List<BigDecimal> orcamentosValor) {
+		super();
+		this.orcamentosValor = orcamentosValor;
+	}
+
 	public Orcamento(BigDecimal valor, Integer quantidade) {
 		super();
 		this.valor = valor;
@@ -42,6 +49,15 @@ public class Orcamento {
 
 	public void setValor(BigDecimal valor) {
 		this.valor = valor;
+	}
+
+	
+	public List<BigDecimal> getOrcamentosValor() {
+		return orcamentosValor;
+	}
+
+	public void setOrcamentosValor(List<BigDecimal> orcamentosValor) {
+		this.orcamentosValor = orcamentosValor;
 	}
 
 	@Override

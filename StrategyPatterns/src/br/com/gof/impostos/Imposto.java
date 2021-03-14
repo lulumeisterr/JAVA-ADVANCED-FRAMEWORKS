@@ -7,5 +7,7 @@ import br.com.gof.orcamento.Orcamento;
 public interface Imposto {
 	
 	BigDecimal calcularImposto(Orcamento orcamento);
+	
+	BigDecimal calcularListaImposto(Orcamento orcamento) throws Exception;
 
 }

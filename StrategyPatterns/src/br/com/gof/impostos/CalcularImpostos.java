@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 import br.com.gof.orcamento.Orcamento;
 
 public class CalcularImpostos {
-	
+
 	/*
 	 * 
 	 * Funcionalidaes que variam de acordo com informacao contendo varios
@@ -18,23 +18,23 @@ public class CalcularImpostos {
 	 * 
 	 * 
 	 */
-//	public BigDecimal calcular(Orcamento orcamento , TipoImposto tipoImposto) {
-//		
-//		
-//		switch (tipoImposto) {
-//		case ICMS:
-//			return orcamento.getValor().multiply(new BigDecimal("0.1"));
-//
-//			
-//		case ISS:
-//			return orcamento.getValor().multiply(new BigDecimal("0.06"));
-//		default:
-//			return BigDecimal.ZERO;
-//		}
-//	
-//	}
-	
-	
+	//	public BigDecimal calcular(Orcamento orcamento , TipoImposto tipoImposto) {
+	//		
+	//		
+	//		switch (tipoImposto) {
+	//		case ICMS:
+	//			return orcamento.getValor().multiply(new BigDecimal("0.1"));
+	//
+	//			
+	//		case ISS:
+	//			return orcamento.getValor().multiply(new BigDecimal("0.06"));
+	//		default:
+	//			return BigDecimal.ZERO;
+	//		}
+	//	
+	//	}
+
+
 	/**
 	 * Sempre que precisarmos realizar uma validacao e essa validacao varia com determinado parametro
 	 * nos usamos o strategy para remover a redundancia de codigo(ifs e elses) e separar cada estrategia
@@ -46,10 +46,14 @@ public class CalcularImpostos {
 	 * @throws Exception 
 	 */
 	public BigDecimal calcular(Orcamento orcamento , Imposto imposto) throws Exception {
-		if(orcamento.getValor().compareTo(new BigDecimal("0")) == 0) {
+		if(orcamento.getValor() != null && orcamento.getValor().compareTo(new BigDecimal("0")) == 0 && !orcamento.getOrcamentosValor().isEmpty()) {
 			throw new Exception("Valor nao pode ser 0");
 		}
-		return imposto.calcularImposto(orcamento);
+		if(orcamento.getOrcamentosValor() != null && !orcamento.getOrcamentosValor().isEmpty()) {
+			return imposto.calcularListaImposto(orcamento);
+		}else {
+			return imposto.calcularImposto(orcamento);
+		}
 	}
 
 }
