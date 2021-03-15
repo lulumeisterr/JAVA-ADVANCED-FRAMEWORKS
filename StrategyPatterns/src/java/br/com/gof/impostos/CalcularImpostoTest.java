@@ -91,9 +91,7 @@ public class CalcularImpostoTest {
 
 		Assert.fail("Deveria lancar exception");
 		
-		BigDecimal resultado;		
-		resultado = calculo.calcular(orcamento, new ICMS());
-	
+		BigDecimal resultado = calculo.calcular(orcamento, new ICMS());
 	}
 
 
@@ -126,7 +124,6 @@ public class CalcularImpostoTest {
 		exception.expect(Exception.class);
 		exception.expectMessage("O Valor nao pode ser 0");
 		
-		BigDecimal resultado;		
-		resultado = calculo.calcular(orcamento, new ICMS());	
+		BigDecimal resultado = calculo.calcular(orcamento, new ICMS());	
 	}
 }
