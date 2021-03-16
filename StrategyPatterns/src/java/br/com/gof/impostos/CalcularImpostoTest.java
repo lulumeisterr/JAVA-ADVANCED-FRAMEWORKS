@@ -7,7 +7,9 @@ import java.math.BigDecimal;
 
 import org.hamcrest.CoreMatchers;
 import org.junit.Assert;
+import org.junit.Assume;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
@@ -79,6 +81,7 @@ public class CalcularImpostoTest {
 
 	/**
 	 * Testando Elegante Exceptions
+
 	 */
 
 	@Test(expected = Exception.class)
@@ -88,8 +91,7 @@ public class CalcularImpostoTest {
 		Orcamento orcamento = new Orcamento(new BigDecimal("0"));
 
 		// Acao
-
-		Assert.fail("Deveria lancar exception");
+		//Assert.fail("Deveria lancar exception");
 		
 		BigDecimal resultado = calculo.calcular(orcamento, new ICMS());
 	}
@@ -112,18 +114,18 @@ public class CalcularImpostoTest {
 
 	}
 
-	
-	@Test()
-	public void testeCalculo_semValorOcamento3() throws Exception {
-
-		// Cenario
-		Orcamento orcamento = new Orcamento(new BigDecimal("0"));
-
-		// Acao
-
-		exception.expect(Exception.class);
-		exception.expectMessage("O Valor nao pode ser 0");
-		
-		BigDecimal resultado = calculo.calcular(orcamento, new ICMS());	
-	}
+//	@Ignore
+//	@Test()
+//	public void testeCalculo_semValorOcamento3() throws Exception {
+//
+//		// Cenario
+//		Orcamento orcamento = new Orcamento(new BigDecimal("0"));
+//
+//		// Acao
+//
+//		exception.expect(Exception.class);
+//		exception.expectMessage("O Valor nao pode ser 0");
+//		
+//		BigDecimal resultado = calculo.calcular(orcamento, new ICMS());	
+//	}
 }

@@ -25,7 +25,7 @@ public class CalcularDescontoTest {
 		
 		//Verificacao
 		
-		Assert.assertTrue("resultado " + resultado, resultado.equals(new BigDecimal("61.50")));
+		Assert.assertTrue("resultado " + resultado, resultado.equals(new BigDecimal("0")));
 		
 		
 	}
