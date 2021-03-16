@@ -1,4 +1,4 @@
-package br.com.gof.impostos;
+package br.com.gof.descontos;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
@@ -15,6 +15,8 @@ import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 import org.junit.rules.ExpectedException;
 
+import br.com.gof.impostos.CalcularImpostos;
+import br.com.gof.impostos.ICMS;
 import br.com.gof.orcamento.Orcamento;
 
 /**

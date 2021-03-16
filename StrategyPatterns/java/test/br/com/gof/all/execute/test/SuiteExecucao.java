@@ -5,8 +5,8 @@ import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
 import br.com.gof.descontos.CalcularDescontoTest;
-import br.com.gof.impostos.CalcularImpostoTest;
-import br.com.gof.impostos.CalcularMaisDeUmImposto;
+import br.com.gof.descontos.CalcularImpostoTest;
+import br.com.gof.descontos.CalcularMaisDeUmImposto;
 
 /**
  * Classe responsavel por executar todos os testes

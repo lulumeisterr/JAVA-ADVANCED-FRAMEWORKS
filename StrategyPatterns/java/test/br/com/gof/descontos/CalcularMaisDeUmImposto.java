@@ -1,4 +1,4 @@
-package br.com.gof.impostos;
+package br.com.gof.descontos;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
@@ -10,6 +10,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ErrorCollector;
 
+import br.com.gof.impostos.CalcularImpostos;
+import br.com.gof.impostos.ICMS;
 import br.com.gof.orcamento.Orcamento;
 
 

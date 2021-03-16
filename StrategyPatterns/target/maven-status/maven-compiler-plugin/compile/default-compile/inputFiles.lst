@@ -1,0 +1,11 @@
+/Users/lucasrodriguesdonascimento/Desktop/JAVA-ADVANCED-FRAMEWORKS/StrategyPatterns/src/br/com/gof/descontos/CalcularDescontoMaiorQueQuintenhos.java
+/Users/lucasrodriguesdonascimento/Desktop/JAVA-ADVANCED-FRAMEWORKS/StrategyPatterns/src/br/com/gof/enums/TipoImposto.java
+/Users/lucasrodriguesdonascimento/Desktop/JAVA-ADVANCED-FRAMEWORKS/StrategyPatterns/src/br/com/gof/impostos/ICMS.java
+/Users/lucasrodriguesdonascimento/Desktop/JAVA-ADVANCED-FRAMEWORKS/StrategyPatterns/src/br/com/gof/impostos/ISS.java
+/Users/lucasrodriguesdonascimento/Desktop/JAVA-ADVANCED-FRAMEWORKS/StrategyPatterns/src/br/com/gof/orcamento/Orcamento.java
+/Users/lucasrodriguesdonascimento/Desktop/JAVA-ADVANCED-FRAMEWORKS/StrategyPatterns/src/br/com/gof/descontos/CalcularDescontoMaisDeCincoItems.java
+/Users/lucasrodriguesdonascimento/Desktop/JAVA-ADVANCED-FRAMEWORKS/StrategyPatterns/src/br/com/gof/descontos/CalcularDesconto.java
+/Users/lucasrodriguesdonascimento/Desktop/JAVA-ADVANCED-FRAMEWORKS/StrategyPatterns/src/br/com/gof/impostos/CalcularImpostos.java
+/Users/lucasrodriguesdonascimento/Desktop/JAVA-ADVANCED-FRAMEWORKS/StrategyPatterns/src/br/com/gof/orcamento/Desconto.java
+/Users/lucasrodriguesdonascimento/Desktop/JAVA-ADVANCED-FRAMEWORKS/StrategyPatterns/src/br/com/gof/descontos/SemDesconto.java
+/Users/lucasrodriguesdonascimento/Desktop/JAVA-ADVANCED-FRAMEWORKS/StrategyPatterns/src/br/com/gof/impostos/Imposto.java
