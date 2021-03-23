@@ -7,17 +7,11 @@
       with_items:
             - openjdk-8-jdk -y
             - openjdk-8-jre -y
-            - nginx
+            - nginx state=latest
             - clean all
             
     - name: 'Start nginx server'
       service:
         name: nginx
         state: start
-        
-    - name: 'Start configuration nginx server'
-      nginx_vhosts:
-        listen: "8089"
-        
-        
 ...
