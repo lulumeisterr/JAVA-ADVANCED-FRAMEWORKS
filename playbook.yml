@@ -1,6 +1,6 @@
 ---
 - host: fiapServerAws
-  become: True
+  remote_user: root
   task:
     - name: Instalanado o java
       apt: name ={{ item }} state=present
