@@ -13,6 +13,6 @@
         - name: 'Start nginx server'
           service:
            	- name: 
-            	- nginx
+               nginx
             - state: 
-            	- start
+               start
