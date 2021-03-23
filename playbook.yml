@@ -1,25 +1,37 @@
-- host: fiapServerAws
-  remote_user: root
-  
-  task:
-    - name: Instalanado o java
-      apt: name ={{ item }} state=present
-      with_items:
-        - openjdk-8-jdk -y
-        - openjdk-8-jre -y
-        - nginx
-        - clean all
-            
-    - name: Start nginx server
-      service:
-       - name: nginx
-       - state: start
-        
-    - name: Configure nginx
-      bar:
-       - server_name ansible
-       - listen 8089
-       - location / 
-       - root /home/user/JAVA-ADVANCED-FRAMEWORKS/StrategyPatterns
-       - index index.html
-...
+- hosts: all
+  handlers:
+        - name: restart mysql
+          service:
+                name: mysql
+                state: restarted
+          become: yes
+
+  tasks:
+        - name: 'Instalar MySQL Server'
+          apt:
+                update_cache: yes
+                cache_valid_time: 3600 #1 hora
+                name: ["mysql-server-5.7", "python3-mysqldb"]
+                state: latest
+          become: yes
+
+        - name: 'Criar usuario no MySQL'
+          mysql_user:
+                login_user: root
+                name: phpuser
+                password: pass
+                priv: '*.*:ALL'
+                host: '%'
+                state: present
+          become: yes
+
+        - name: 'Copiar arquivo mysqld.cnf'
+          copy:
+                src: /vagrant/configs/mysqld.cnf
+                dest: /etc/mysql/mysql.conf.d/mysqld.cnf
+                owner: root
+                group: root
+                mode: 0644
+          become: yes
+          notify:
+                - restart mysql
