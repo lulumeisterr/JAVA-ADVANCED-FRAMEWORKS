@@ -1,5 +1,5 @@
 ---
-- host: fiapServerAws
+- host: fiap
   remote_user: root
   
   task:
