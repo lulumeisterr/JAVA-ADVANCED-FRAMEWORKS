@@ -9,11 +9,13 @@
             - openjdk-8-jre -y
             - nginx
             - clean all
+            
     - name: 'Start nginx server'
       service:
         name: nginx
         state: start
-     - name: 'Configure nginx'
+        
+    - name: 'Configure nginx'
       bar:
         - server_name ansible: ansible
         - listen: 8089
