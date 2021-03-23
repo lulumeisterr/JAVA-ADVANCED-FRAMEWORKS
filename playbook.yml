@@ -15,12 +15,9 @@
         name: nginx
         state: start
         
-    - name: 'Start nginx server2'
-      bar:
-        - server_name ansible: ansible
-        - listen: 8089
-        - location: localhost /
-        - root: /home/user/JAVA-ADVANCED-FRAMEWORKS/StrategyPatterns
-        - index: index.html      
+    - name: 'Start nginx server'
+      service:
+        name: nginx
+        state: start   
         
 ...
