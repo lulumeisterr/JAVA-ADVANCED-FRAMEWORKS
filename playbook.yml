@@ -1,6 +1,6 @@
 - hosts: fiapServerAws
   remote_user: root
-  
+        
   tasks:
         - name: 'Instalanado o java'
           apt: name ={{ item }} state=present
@@ -9,3 +9,16 @@
             - openjdk-8-jre -y
             - nginx
             - clean all
+            
+        - name: 'Start nginx server'
+          service:
+            - name: nginx
+            - state: start
+                
+        - name: 'Configure nginx'
+          bar:
+            - server_name ansible: ansible
+            - listen: 8089
+            - location: localhost /
+            - root: /home/user/JAVA-ADVANCED-FRAMEWORKS/StrategyPatterns
+            - index: index.html
