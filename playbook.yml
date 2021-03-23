@@ -13,7 +13,7 @@
       service:
         name: nginx
         state: start
-    - name: 'Configure nginx'
+     - name: 'Configure nginx'
       bar:
         - server_name ansible: ansible
         - listen: 8089
