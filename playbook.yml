@@ -15,9 +15,9 @@
         name: nginx
         state: start
         
-    - name: 'Start nginx server'
-      service:
-        name: nginx
-        state: start  
+    - name: 'Start configuration nginx server'
+      nginx_vhosts:
+        listen: "8089"
+        
         
 ...
