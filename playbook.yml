@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: fiapServerAws
   remote_user: ubuntu
   become: false
   tasks:
@@ -8,7 +8,6 @@
         src: /var/lib/jenkins/workspace/Demo/StrategyPatterns
         dest: /ubuntu/StrategyPatterns
         mode: pull
-      delegate_to: fiapServerAws
     - name: 'nginx'
       apt: name ={{ item }} state=present
       with_items:
