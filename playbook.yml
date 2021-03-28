@@ -1,8 +1,14 @@
 ---
-- hosts: fiapServerAws
+- hosts: localhost
   remote_user: ubuntu
   become: yes
   tasks:
+    - name: Transfer file from ServerA to ServerB
+      synchronize:
+        src: /var/lib/jenkins/workspace/Demo/StrategyPatterns
+        dest: /ubuntu/StrategyPatterns
+        mode: pull
+      delegate_to: fiapServerAws
     - name: 'nginx'
       apt: name ={{ item }} state=present
       with_items:
