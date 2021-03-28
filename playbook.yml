@@ -4,9 +4,8 @@
   become: true
   tasks:
     - name: Transfer file from ServerA to ServerB
-      synchronize:
-        shell: cp /var/lib/jenkins/workspace/Demo/StrategyPatterns /home/ubuntu/
-        recursive: yes
+      shell: cp /var/lib/jenkins/workspace/Demo/StrategyPatterns /home/ubuntu/
+      recursive: yes
         
     - name: 'nginx'
       apt: name ={{ item }} state=present
