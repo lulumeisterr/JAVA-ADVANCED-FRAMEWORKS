@@ -1,7 +1,9 @@
 ---
 - hosts: fiapServerAws
   remote_user: root
+  become: yes
   become_method: sudo
+  become_user: jenkins 
   tasks:
     - name: 'Instalanado o java'
       apt: name ={{ item }} state=present
