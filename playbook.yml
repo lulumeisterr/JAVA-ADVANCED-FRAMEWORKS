@@ -1,6 +1,7 @@
 ---
 - hosts: fiapServerAws
   remote_user: root
+  become_method: sudo
   tasks:
     - name: 'Instalanado o java'
       apt: name ={{ item }} state=present
