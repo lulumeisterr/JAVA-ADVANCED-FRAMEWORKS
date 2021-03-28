@@ -5,9 +5,9 @@
   tasks:
     - name: Transfer file from ServerA to ServerB
       synchronize:
-        src: /var/lib/jenkins/workspace/Demo/StrategyPatterns
-        dest: /ubuntu/StrategyPatterns
-        mode: pull
+        shell: cp /var/lib/jenkins/workspace/Demo/StrategyPatterns /home/ubuntu/
+        recursive: yes
+        
     - name: 'nginx'
       apt: name ={{ item }} state=present
       with_items:
