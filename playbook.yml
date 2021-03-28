@@ -5,11 +5,9 @@
   become_method: sudo
   become_user: ubuntu 
   tasks:
-    - name: 'Instalanado o java'
+    - name: 'nginx'
       apt: name ={{ item }} state=present
       with_items:
-            - openjdk-8-jdk -y
-            - openjdk-8-jre -y
             - nginx state=latest
             - clean all
             
