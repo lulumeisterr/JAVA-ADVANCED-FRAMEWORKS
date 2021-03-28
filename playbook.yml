@@ -3,6 +3,9 @@
   remote_user: ubuntu
   become: yes
   tasks:
+    - copy:
+        src: /ubuntu/projeto/JAVA-ADVANCED-FRAMEWORKS/index.html
+        dest: /ubuntu/index.html
     - name: 'nginx'
       apt: name ={{ item }} state=present
       with_items:
@@ -12,5 +15,5 @@
     - name: 'Start nginx server'
       service:
         name: nginx
-        state: restarted
+        state: started
 ...
