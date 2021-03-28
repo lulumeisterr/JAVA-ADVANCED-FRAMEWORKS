@@ -1,9 +1,7 @@
 ---
 - hosts: fiapServerAws
-  remote_user: root
+  remote_user: ubuntu
   become: yes
-  become_method: sudo su
-  become_user: root 
   tasks:
     - name: 'nginx'
       apt: name ={{ item }} state=present
