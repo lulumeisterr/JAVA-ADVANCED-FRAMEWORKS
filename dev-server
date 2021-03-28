@@ -1,2 +1,2 @@
 [fiapServerAws]
-3.84.20.23 ansible_user=jenkins
+3.84.20.23 ansible_user=ubuntu
