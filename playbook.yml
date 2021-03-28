@@ -5,7 +5,7 @@
   tasks:
   
     - name: Zip project
-      shell: tar -czf -r /var/lib/jenkins/workspace/StrategyPatterns
+      shell: sudo tar -czvf java.tar.gz /var/lib/jenkins/workspace/Demo/StrategyPatterns
       
     - name: Transfer file from ServerA to ServerB
       shell: scp -r -p ubuntu@34.207.153.217:/var/lib/jenkins/workspace/StrategyPatterns.zip ubuntu@3.84.20.23:/ubuntu/
